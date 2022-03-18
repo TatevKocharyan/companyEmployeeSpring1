@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Information</title>
+</head>
+<body>
+
+
+<div>
+
+
+
+    <img th:if="${employee.employeeImages==null || employee.employeeImages.isEmpty()}" th:src="@{/img/img.png}" width="100" height="100">
+
+
+
+    <ul th:if="${employee.employeeImages!=null && !employee.employeeImages.isEmpty()}">
+        <li th:each="image:${employee.employeeImages}" ><img th:src="@{/getImage(picName=${image.getName()})}" width="100" height="100"></li>
+    </ul>
+
+
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
